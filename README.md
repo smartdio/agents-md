@@ -8,10 +8,10 @@ Maintain reusable agent collaboration rules and improve them through practical e
 
 Give an agent the source directory or repository root, this README, or a relevant policy/reference URL or path, and explicitly ask it to design a suitable collaboration workflow for your project and document it in AGENTS.md. Use the guidance as a reference, not a template to copy verbatim. A request only to read or analyze a link does not authorize edits. A link does not grant access or write permissions.
 
-Copy this prompt and replace the source placeholder. To use a different target project, add its path:
+Copy this prompt directly. To use a different target project, add its path:
 
 ```text
-Use <documentation URL or path> as a reference to design a multi-agent collaboration workflow suited to the current project's characteristics, scale, and existing ways of working, and document it in the project's AGENTS.md. Preserve existing project constraints. Choose roles, task boundaries, context handoffs, reasoning depth, and acceptance checks as needed; do not copy every rule or require multiple agents for every task. Modify only the project's AGENTS.md; do not modify tools or global configuration.
+Use https://github.com/smartdio/agents-md/blob/main/README.md as a reference to design a multi-agent collaboration workflow suited to the current project's characteristics, scale, and existing ways of working, and document it in the project's AGENTS.md. Preserve existing project constraints. Choose roles, task boundaries, context handoffs, reasoning depth, and acceptance checks as needed; do not copy every rule or require multiple agents for every task. Modify only the project's AGENTS.md; do not modify tools or global configuration.
 ```
 
 Configuration and adoption procedure:

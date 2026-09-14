@@ -4,6 +4,10 @@ English (canonical) | [简体中文](CHANGELOG.zh-CN.md)
 
 ## 2026-09-14
 
+### Ready-to-use documentation URL
+
+- Replaced the example prompt's source placeholder with the canonical GitHub README URL so it can be copied without editing the source field.
+
 ### Public documentation cleanup
 
 - Removed machine-specific migration notes from both READMEs; public usage does not depend on private local paths.
