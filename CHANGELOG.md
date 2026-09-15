@@ -2,6 +2,14 @@
 
 English (canonical) | [简体中文](CHANGELOG.zh-CN.md)
 
+## 2026-09-15
+
+### Per-task sub-agent model selection
+
+- Separated model capability from reasoning depth and allowed each subtask to use the least costly or fastest available model that still meets its acceptance criteria.
+- Clarified that sub-agents need not share one model or match the main agent, while preserving the user's main-agent settings and actual tool capability boundaries.
+- Updated the project-adoption prompt and orchestration reference in both languages.
+
 ## 2026-09-14
 
 ### Ready-to-use documentation URL

@@ -38,9 +38,10 @@ Loss of contact does not establish that execution has stopped. Sending an interr
 ## Capability boundaries
 
 - AGENTS.md is behavioral guidance, not an executable scheduler. It cannot guarantee tool capabilities or configuration changes.
+- Sub-agent model selection and reasoning effort are separate decisions. Model availability and per-agent overrides depend on the current interface; a default sub-agent model does not require every sub-agent to use it when an explicit supported override is available.
 - Omitting the main conversation at creation does not mean clearing the specialist's context on every turn. Continue using the actual original agent identifier; creating a new agent with the same name does not restore it.
 - An agent may not remain accessible across new tasks, restarts, or recovery. Project files preserve key state, not the complete agent session.
-- Available reasoning levels and overrides depend on the current interface. If an existing agent cannot change effort dynamically, first consider supplying precise information or handing off only a bounded difficult question to a higher-effort agent; the entire workstream need not be discarded.
+- Available model and reasoning overrides depend on the current interface. If an existing agent cannot change them dynamically, first consider supplying precise information or handing off only a bounded difficult question to a more capable or higher-effort agent; the entire workstream need not be discarded.
 
 Capability reference: [OpenAI subagent documentation](https://learn.chatgpt.com/docs/agent-configuration/subagents). These boundaries are carried forward from the initial policy. Recheck them when tools change; do not treat them as permanent capability promises.
 

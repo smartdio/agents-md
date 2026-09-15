@@ -21,10 +21,11 @@ Meet user requirements and acceptance criteria while reducing irrelevant context
 - Memory does not replace project facts: check relevant artifacts and changes before continuing, and write key state into existing records.
 - Report conclusions, artifacts, verification evidence, and risks or blockers concisely. Save detailed logs to files as needed; do not return lengthy process accounts.
 
-## Reasoning Depth
+## Model and Reasoning Depth
 
-- These guidelines permit setting reasoning depth according to subtask difficulty and risk: prefer direct tools or `low` for mechanical work, `medium` for clear local work, `high` for complex analysis and critical review, and higher levels as needed for difficult, high-risk problems.
-- Preserve the user's main-agent settings; do not change models without authorization. Use parameters actually supported by the tools; do not treat a written request as an applied configuration.
+- Choose model capability and reasoning depth independently for each subtask. When supported, use a faster or lower-cost model that can still meet the acceptance criteria for bounded, routine, low-risk work; reserve more capable models for complex, ambiguous, or high-risk work. Sub-agents need not all use the same model or match the main agent.
+- Set reasoning depth separately: prefer direct tools or `low` for mechanical work, `medium` for clear local work, `high` for complex analysis and critical review, and higher levels as needed for difficult, high-risk problems.
+- Preserve the user's main-agent settings; do not change its model without authorization. Use only models and override parameters actually available to the current tools; do not treat a written request as an applied configuration or select an obsolete model merely because it is cheaper.
 - Known difficult tasks may start at a higher level. After failure, first distinguish missing inputs, environment failures, artifact defects, and insufficient reasoning, then address the cause. Do not mechanically raise the level or retry without new information.
 
 ## Execution and Acceptance
