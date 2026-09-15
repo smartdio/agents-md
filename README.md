@@ -14,6 +14,14 @@ Copy this prompt directly. To use a different target project, add its path:
 Use https://github.com/smartdio/agents-md/blob/main/README.md as a reference to design a multi-agent collaboration workflow suited to the current project's characteristics, scale, and existing ways of working, and document it in the project's AGENTS.md. Preserve existing project constraints. Choose roles, task boundaries, context handoffs, model capability, reasoning depth, and acceptance checks as needed; do not copy every rule or require multiple agents for every task. Modify only the project's AGENTS.md; do not modify tools or global configuration.
 ```
 
+Optional variant for a GPT-6 main agent with GPT-5.6 specialists (verify current availability first):
+
+```text
+Use https://github.com/smartdio/agents-md/blob/main/README.md as a reference to design a multi-agent collaboration workflow for the current project and document it in the project's AGENTS.md. When the main agent uses GPT-6, such as `gpt-6-astra`, preserve its configured model and reasoning depth. Assign simpler, bounded subtasks to a suitable available GPT-5.6 model, such as `gpt-5.6-sol`, when it can meet the acceptance criteria. Choose reasoning depth separately for each subtask: consider `low` or `medium` for routine work and `high` when deeper analysis is justified. Keep GPT-6 available for complex, ambiguous, or high-risk subtasks, and escalate when evidence shows GPT-5.6 is insufficient. Treat these as task-dependent choices, using only model and reasoning combinations supported by the current environment. Preserve existing project constraints and the same acceptance standards. Modify only the project's AGENTS.md; do not modify tools or global configuration.
+```
+
+This example uses GPT-6 as the higher-capability baseline and GPT-5.6 as an option for suitable subtasks. Model selection and reasoning depth remain separate decisions. Check the current [OpenAI model catalog](https://developers.openai.com/api/docs/models) and your environment's available models before reusing named examples.
+
 Configuration and adoption procedure:
 
 1. Confirm an explicit adoption request and distinguish the source from the target. If the current task or project context uniquely identifies the target, use it without requesting its path or confirmation again. Ask only if no target is clear or multiple projects could be intended; do not treat this source rules repository as the target by default.

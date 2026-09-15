@@ -9,6 +9,7 @@ English (canonical) | [简体中文](CHANGELOG.zh-CN.md)
 - Separated model capability from reasoning depth and allowed each subtask to use the least costly or fastest available model that still meets its acceptance criteria.
 - Clarified that sub-agents need not share one model or match the main agent, while preserving the user's main-agent settings and actual tool capability boundaries.
 - Updated the project-adoption prompt and orchestration reference in both languages.
+- Added an optional prompt using GPT-6 as the main-agent baseline and GPT-5.6 (for example, `gpt-5.6-sol`) for suitable simpler subtasks, with independently selected reasoning depth, availability checks, unchanged acceptance standards, and escalation when needed.
 
 ## 2026-09-14
 
