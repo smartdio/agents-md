@@ -14,13 +14,13 @@
 请参考 https://github.com/smartdio/agents-md/blob/main/README.md，结合当前项目的特点、规模和现有工作方式，配置适合本项目的多 Agent 协作流程，并写入项目的 AGENTS.md。保留已有项目约束，按需选择角色、任务拆分、上下文传递、模型能力、推理深度和验收方式，不必照搬全部规则，也不强制所有任务都使用多 Agent。本次仅修改项目的 AGENTS.md，不修改工具或全局配置。
 ```
 
-可选提示词：GPT-6 主 Agent 搭配 GPT-5.6 子代理（使用前先核对当前可用性）：
+可选提示词：按成本调配 GPT-6 子 Agent（使用前先核对当前可用性和费率）：
 
 ```text
-请参考 https://github.com/smartdio/agents-md/blob/main/README.md，为当前项目设计多 Agent 协作流程并写入项目的 AGENTS.md。当主 Agent 使用 GPT-6（例如 `gpt-6-astra`）时，保留其已配置的模型和推理深度。对于较简单、边界清晰的子任务，在能够满足验收标准的前提下，选择当前可用的合适 GPT-5.6 模型，例如 `gpt-5.6-sol`。同时为每个子任务单独选择推理深度：常规工作可考虑 `low` 或 `medium`，确需深入分析时使用 `high`。复杂、模糊或高风险子任务可继续使用 GPT-6；证据表明 GPT-5.6 能力不足时再升级。根据任务情况选择，仅使用当前环境支持的模型与推理组合，保留已有项目约束并维持相同验收标准。本次仅修改项目的 AGENTS.md，不修改工具或全局配置。
+请参考 https://github.com/smartdio/agents-md/blob/main/README.md，为当前项目设计多 Agent 协作流程并写入项目的 AGENTS.md。保留主 Agent 已配置的模型和推理深度。仅在有界、独立工作的推进、上下文隔离或验收收益预计足以抵偿额外代理用量时委派。复杂编码、分析或审查可考虑当前可用的 `gpt-6-sol` 子 Agent；清晰、可重复的任务可考虑 `gpt-6-luna`；机械步骤优先使用直接工具。按模型和任务分别设置推理深度，适合时可从 GPT-6 Sol 的 `medium` 或 GPT-6 Luna 的 `high` 开始，再依任务证据调整。比较当前费率及预计的验证与返工成本，不假设旧型号一定更便宜。仅使用当前环境支持的模型与推理组合，保留已有项目约束和相同验收标准，将更强模型用于确有需要的工作。本次仅修改项目的 AGENTS.md，不修改工具或全局配置。
 ```
 
-此示例以 GPT-6 为较高能力基准，GPT-5.6 作为适合子任务的可选模型。模型选择与推理深度仍分别决定。复用具体型号示例前，请核对当前的 [OpenAI 模型目录](https://developers.openai.com/api/docs/models)及环境实际可用的模型。
+此示例依据当前 [OpenAI 模型指南](https://learn.chatgpt.com/docs/models)选择 Sol 和 Luna；[子 Agent 指南](https://learn.chatgpt.com/docs/agent-configuration/subagents)说明多代理会增加 token 用量。模型选择与推理深度仍分别决定。复用具体型号示例前，请核对当前[积分费率](https://learn.chatgpt.com/docs/pricing#token-rates)和环境实际可用的模型；较低的 token 单价不能证明任务总成本更低。
 
 配置与采用流程：
 

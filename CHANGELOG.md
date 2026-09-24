@@ -2,6 +2,14 @@
 
 English (canonical) | [简体中文](CHANGELOG.zh-CN.md)
 
+## 2026-09-24
+
+### GPT-6 sub-agent cost selection
+
+- Updated the reusable prompt to consider GPT-6 Sol for demanding sub-agents and GPT-6 Luna for clear, repeatable work instead of assuming GPT-5.6 is the cheaper step down from a GPT-6 main agent. The main agent keeps the user's configured model and reasoning depth.
+- Clarified that delegation incurs agent and coordination overhead, and that model choice should consider current rates, likely usage, validation, and rework through acceptance. Fixed-usage price comparisons are not measured net savings.
+- Repriced the existing three-project usage sample for this decision using current Codex Standard credit rates. With recorded token usage fixed, replacing only child GPT-5.6 Sol/Luna prices with GPT-6 Sol/Luna prices while leaving main-agent assignments unchanged lowers whole-task credit equivalents by 7.48% (AI device), 13.69% (fighting game), and 4.14% (media operations). These are price scenarios, not observed savings; the dated historical report and its supporting data retain their original rate snapshot.
+
 ## 2026-09-15
 
 ### Per-task sub-agent model selection

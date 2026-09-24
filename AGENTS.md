@@ -6,7 +6,7 @@ Meet user requirements and acceptance criteria while reducing irrelevant context
 
 ## Work Approach and Coordination
 
-- Handle small tasks, strongly sequential work, or work costly to split directly. For medium or large tasks that benefit from independent progress, delegate to specialist sub-agents as needed. Do not set headcount quotas or create an agent for every step.
+- Handle small tasks, strongly sequential work, or work costly to split directly. For medium or large tasks, delegate when independent progress, context isolation, or valuable independent checks are likely to justify the extra agent tokens and coordination. Do not set headcount quotas or create an agent for every step.
 - The main agent owns the goals, constraints, specialist interfaces, and acceptance criteria, and is responsible for breaking down dependencies, configuring tasks, communicating changes, reviewing evidence, and final delivery. It may handle critical mainline work and small tasks without duplicating adequate existing results. When requirements change and make tasks obsolete, notify the affected agents and pause or terminate the affected work, then check intermediate artifacts before reassigning it. Unaffected work may continue.
 - Perform targeted review of high-risk, conflicting, or insufficiently supported conclusions. Do not merely relay specialist conclusions or completely redo their work.
 - The main agent coordinates all assignments. Sub-agents must explain why further splitting is needed; the main agent decides and dispatches it. When capacity is insufficient, queue work or let the main agent handle suitable tasks instead of repeatedly creating agents. Reuse existing records to track executors, artifact versions, evidence, and blockers; do not add management processes for small tasks.
@@ -23,7 +23,7 @@ Meet user requirements and acceptance criteria while reducing irrelevant context
 
 ## Model and Reasoning Depth
 
-- Choose model capability and reasoning depth independently for each subtask. When supported, use a faster or lower-cost model that can still meet the acceptance criteria for bounded, routine, low-risk work; reserve more capable models for complex, ambiguous, or high-risk work. Sub-agents need not all use the same model or match the main agent.
+- Choose model capability and reasoning depth independently for each subtask. Compare current model rates and likely usage, validation, and rework to estimate the cost of an accepted result; do not assume an older model is cheaper or a lower per-token rate lowers total task cost. When supported, use a faster or lower-cost model that can still meet the acceptance criteria for bounded, routine, low-risk work; reserve more capable models for complex, ambiguous, or high-risk work. Sub-agents need not all use the same model or match the main agent.
 - Set reasoning depth separately: prefer direct tools or `low` for mechanical work, `medium` for clear local work, `high` for complex analysis and critical review, and higher levels as needed for difficult, high-risk problems.
 - Preserve the user's main-agent settings; do not change its model without authorization. Use only models and override parameters actually available to the current tools; do not treat a written request as an applied configuration or select an obsolete model merely because it is cheaper.
 - Known difficult tasks may start at a higher level. After failure, first distinguish missing inputs, environment failures, artifact defects, and insufficient reasoning, then address the cause. Do not mechanically raise the level or retry without new information.
@@ -40,5 +40,5 @@ Meet user requirements and acceptance criteria while reducing irrelevant context
 ## Completion and Optional References
 
 - Work is complete only when acceptance criteria are met and necessary evidence is available. Report unverified items and residual risks honestly; agents finishing does not mean the task is complete.
-- Do not sacrifice quality for savings or claim that multiple agents necessarily reduce token use. Compare overall consumption, elapsed time, and rework only when data is already available; do not add a statistics burden.
+- Do not sacrifice quality for savings or claim that multiple agents necessarily reduce token use. When data is available, compare main-agent and all sub-agent consumption, elapsed time, acceptance results, and rework; distinguish fixed-usage price estimates from measured net savings. Do not add a statistics burden.
 - Read the [collaboration reference](references/orchestration.md) when complex task packages, handoff templates, or capability boundaries are needed; do not load all references by default. See the [README](README.md) for maintenance and reuse across projects.
