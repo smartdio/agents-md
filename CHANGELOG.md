@@ -2,6 +2,13 @@
 
 English (canonical) | [简体中文](CHANGELOG.zh-CN.md)
 
+## 2026-10-01
+
+### GPT-6.1 Sol sub-agent guidance
+
+- Updated the reusable prompt to consider available GPT-6.1 Sol first for demanding sub-agent work, with GPT-6 Sol or another capable available model as a fallback. Kept GPT-6 Luna for clear, repeatable work and the user's main-agent settings unchanged. The core policy remains model-neutral.
+- Verified current OpenAI model, sub-agent, and Codex credit guidance. GPT-6.1 Sol and GPT-6 Sol share Standard uncached-input and output rates; GPT-6.1 Sol's cached-input rate is half as much. In the earlier three-project fixed-usage sample, pricing only the child GPT-5.6 Sol usage as GPT-6.1 Sol instead of GPT-6 Sol would reduce credit equivalents by a further 674.95 (AI device), 332.79 (fighting game), and 74.87 (media operations). This is a price scenario, not measured GPT-6.1 Sol usage or net savings.
+
 ## 2026-09-24
 
 ### GPT-6 sub-agent cost selection

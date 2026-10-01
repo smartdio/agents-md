@@ -14,13 +14,13 @@
 请参考 https://github.com/smartdio/agents-md/blob/main/README.md，结合当前项目的特点、规模和现有工作方式，配置适合本项目的多 Agent 协作流程，并写入项目的 AGENTS.md。保留已有项目约束，按需选择角色、任务拆分、上下文传递、模型能力、推理深度和验收方式，不必照搬全部规则，也不强制所有任务都使用多 Agent。本次仅修改项目的 AGENTS.md，不修改工具或全局配置。
 ```
 
-可选提示词：按成本调配 GPT-6 子 Agent（使用前先核对当前可用性和费率）：
+可选提示词：按成本调配当前 GPT-6 系列模型（使用前先核对可用性和费率）：
 
 ```text
-请参考 https://github.com/smartdio/agents-md/blob/main/README.md，为当前项目设计多 Agent 协作流程并写入项目的 AGENTS.md。保留主 Agent 已配置的模型和推理深度。仅在有界、独立工作的推进、上下文隔离或验收收益预计足以抵偿额外代理用量时委派。复杂编码、分析或审查可考虑当前可用的 `gpt-6-sol` 子 Agent；清晰、可重复的任务可考虑 `gpt-6-luna`；机械步骤优先使用直接工具。按模型和任务分别设置推理深度，适合时可从 GPT-6 Sol 的 `medium` 或 GPT-6 Luna 的 `high` 开始，再依任务证据调整。比较当前费率及预计的验证与返工成本，不假设旧型号一定更便宜。仅使用当前环境支持的模型与推理组合，保留已有项目约束和相同验收标准，将更强模型用于确有需要的工作。本次仅修改项目的 AGENTS.md，不修改工具或全局配置。
+请参考 https://github.com/smartdio/agents-md/blob/main/README.md，为当前项目设计多 Agent 协作流程并写入项目的 AGENTS.md。保留主 Agent 已配置的模型和推理深度。仅在有界、独立工作的推进、上下文隔离或验收收益预计足以抵偿额外代理用量时委派。复杂编码、分析或审查优先考虑当前可用的 `gpt-6.1-sol` 子 Agent；若不可用，再依据相同验收标准评估 `gpt-6-sol` 或其他可用模型。清晰、可重复的任务可考虑 `gpt-6-luna`；机械步骤优先使用直接工具。按模型和任务分别设置推理深度：GPT-6.1 Sol 可从 `medium` 开始，GPT-6 Luna 子 Agent 可从 `high` 开始，再依任务证据调整。任务确需更强能力时考虑 `gpt-6-astra`。比较当前费率、预计用量、验证与返工成本，不按模型新旧推断价格或质量。仅使用当前环境支持的模型与推理组合，并保留已有项目约束和相同验收标准。本次仅修改项目的 AGENTS.md，不修改工具或全局配置。
 ```
 
-此示例依据当前 [OpenAI 模型指南](https://learn.chatgpt.com/docs/models)选择 Sol 和 Luna；[子 Agent 指南](https://learn.chatgpt.com/docs/agent-configuration/subagents)说明多代理会增加 token 用量。模型选择与推理深度仍分别决定。复用具体型号示例前，请核对当前[积分费率](https://learn.chatgpt.com/docs/pricing#token-rates)和环境实际可用的模型；较低的 token 单价不能证明任务总成本更低。
+此示例依据当前 [OpenAI 模型指南](https://learn.chatgpt.com/docs/models#gpt-6.1-sol)和[子 Agent 指南](https://learn.chatgpt.com/docs/agent-configuration/subagents)；后者说明委派会增加 token 用量。模型选择与推理深度仍分别决定。按本次核对的 [Codex Standard 积分费率](https://learn.chatgpt.com/docs/pricing#token-rates)，GPT-6.1 Sol 与 GPT-6 Sol 的非缓存输入及输出费率相同，GPT-6.1 Sol 的缓存输入费率为其一半。复用具体型号示例前，请重新核对费率和环境实际可用的模型；较低的 token 单价不能证明任务总成本更低。
 
 配置与采用流程：
 
