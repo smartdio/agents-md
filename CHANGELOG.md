@@ -2,6 +2,10 @@
 
 English (canonical) | [简体中文](CHANGELOG.zh-CN.md)
 
+## 2026-11-21
+
+- Start subagents with suitable parent settings and refresh the examples for GPT-6.2 Sol, Astra, and specialized tasks.
+
 ## 2026-10-01
 
 ### GPT-6.1 Sol sub-agent guidance

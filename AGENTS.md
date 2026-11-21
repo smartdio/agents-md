@@ -24,7 +24,7 @@ Meet user requirements and acceptance criteria while reducing irrelevant context
 ## Model and Reasoning Depth
 
 - Choose model capability and reasoning depth independently for each subtask. Compare current model rates and likely usage, validation, and rework to estimate the cost of an accepted result; do not assume an older model is cheaper or a lower per-token rate lowers total task cost. When supported, use a faster or lower-cost model that can still meet the acceptance criteria for bounded, routine, low-risk work; reserve more capable models for complex, ambiguous, or high-risk work. Sub-agents need not all use the same model or match the main agent.
-- Set reasoning depth separately: prefer direct tools or `low` for mechanical work, `medium` for clear local work, `high` for complex analysis and critical review, and higher levels as needed for difficult, high-risk problems.
+- Start with the parent agent's model and reasoning effort when they fit the subtask. Use tools directly for mechanical steps. Lower effort for quick scans or raise it for complex diagnosis and critical review. Override either setting when the task or acceptance evidence warrants it.
 - Preserve the user's main-agent settings; do not change its model without authorization. Use only models and override parameters actually available to the current tools; do not treat a written request as an applied configuration or select an obsolete model merely because it is cheaper.
 - Known difficult tasks may start at a higher level. After failure, first distinguish missing inputs, environment failures, artifact defects, and insufficient reasoning, then address the cause. Do not mechanically raise the level or retry without new information.
 
